@@ -1,0 +1,72 @@
+Customer Analysis :-
+Task To-Do->
+- Revenue per State
+- Revenue based on Month of the year
+- Revenue based on Age
+- Quantity & Discount Percentage Correlation
+- Percentage of Revenue per Region
+- Revenue per Category per Gender
+- Build the Dashboard
+
+- Revenue per State:-
+1.Rows-> State , Columns-> Sum(Total), Then Sum(total) to label
+2. State to Details (or choose symbol map in show me {right side})
+3.SUM(Total) to -> Color & SUM(Total) -> Label
+4.Format label (click on label nd change font and text) & also edit colors (Change color to Temperature Diverging)
+5.If You want dark then Go To Map then Background Maps -> (Dark {But i choose satellite})
+6.Rename the chart Revenue per State.
+
+- Revenue based on Month of the year:-
+1.First Change ta datatype of Month (String -> Date)
+2. Row-> Month , Column-> SUM(Total)
+3.Change it to MONTH(month) not YEAR(Month) 
+{If you see + sign before Year click it it comes quater then again click it it comes MONTH} and remove both.
+4.Then Right-Click on the Month and change it Month( month year) , Then change continuous to discreate.
+5. SUM(Total) to -> Color & SUM(Total) -> Label
+6.Change Color purple , Then click format-> font-> Lines -> Change Grid lines to None  and uncheck the show header.
+7.Change the title name Month - wise Revenue( Right-click the title and change the font and move it to center).
+
+- Revenue based on Age:-
+1.Right click on Age -> Create -> Bins 
+Change field name:  Age bins
+Size of bins: 10 then Ok.
+2.Row-> Age bins, Column-> SUM(Total)
+3. SUM(Total) -> Label
+4.Right Click on Age bins(rows) -> Edit Aliases & Change value name (Lyk 10 ->  <20).
+5.Right Click on SUM(Total) {label} -> Format -> Pane-> Numbers -> Currency(custom) -> Display unit(M).
+6.Change the Color (Blue -Green Sequential), Then click format-> font-> Lines -> Change Grid lines to None and uncheck the show header.
+7.Change the title name Age - wise Revenue( Right-click the title and change the font and move it to center).
+
+- Quantity & Discount Percentage Correlation:-
+1. Row-> Discount Percentage, Column-> Qty Ordered
+2. Change the Both rows & columns to Dimension. 
+3.Discount Percentage to Filter and click on At least and change 0 to 1.
+4.Change the title name Quantity - Discount Coorelation( Right-click the title and change the font and move it to center).
+
+- Percentage of Revenue per Region:- (Donout Chart)
+1.Rows-> SUM(Total), Columns-> Region
+2.And choose Pie Chart in show me {right side})
+3.Color-> Region, Size-> SUM(Total), Angle-> SUM(Total), Label-> Region
+4.Right click Region(label) ->  Quick Table Calculations -> Percentage of Total 
+5.Create Calculated field (Zero Axis) in the field type{0}.
+6.Rows-> Zero Axis, Rows-> Zero Axis 
+7.Remove all the field in 2nd tab(Zero Axis).
+8.Increased the Size 2nd tab and also 1st tab then click on dual axis then change the color -> white of 2nd tab. (Now you can see the donout chart).
+9.Then click format-> font-> Lines -> Change Grid lines to None & Change Zero lines to None and uncheck the show header.
+10.Change the title name Region - Wise Percentage Share (%) ( Right-click the title and change the font and move it to center).
+
+- Revenue per Category per Gender:- (Butterfly Chart)
+1.Create a calculated field -> Female Revenue ( IF [Gender] = "F" THEN [Total] END ) 
+      and also Create a calculated field -> Male Revenue ( IF [Gender] = "M" THEN [Total] END ).
+2.Rows-> Category, Columns-> Female Revenue, Zero Axis, Male Revenue
+3.Zero Axis tab-> Drag and drop Category -> Label , Instated Automatic -> Text
+4.Right click Zero Axis -> Edit axis -> categories and tick Marks -> None (both)
+5.Uncheck show header of Category (Rows) 
+6.Right click Female Revenue -> Edit axis -> Scale -> Reversed  and sorted category (high to low).
+7.Change color -> Green - Gold
+8. Format it
+9.Change the title name Gender - Wise Sales Analysis ( Right-click the title and change the font and move it to center).
+
+-Create Total Revenue:-
+1.SUM(Total) -> Label and format it on your choice.
+
